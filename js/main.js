@@ -1,3 +1,5 @@
+
+
 const dados = ["1", "2", "3", "4", "5", "6"];
 const cantidadDeLanzamientos = 3; // cantidad de lanzamientos
 
@@ -24,8 +26,9 @@ function lanzarCubilete(usuario) {
 }
 
 // usuarios
-let usuario1 = { nombre: 'Usuario1', resultados: [], rondasGanadas:0 };
+let usuario1 = { nombre: '', resultados: [], rondasGanadas:0 };
 let usuario2 = { nombre: 'Usuario2', resultados: [], rondasGanadas:0 };
+usuario1.nombre = prompt("Por favor, ingrese su nombre:");
 
 // Realiza lanzamientos  para cada usuario
 for (let lanzamiento = 1; lanzamiento <= cantidadDeLanzamientos; lanzamiento++) {
@@ -36,7 +39,7 @@ for (let lanzamiento = 1; lanzamiento <= cantidadDeLanzamientos; lanzamiento++) 
     if (usuario1.resultados === usuario2.resultados) {
     console.log('Empate');
     } else if (usuario1.resultados.reduce((a, b) => a + b, 0) > usuario2.resultados.reduce((a, b) => a + b, 0)) {
-    console.log('Usuario1 gana la ronda');
+    console.log(`${usuario1.nombre} gana la ronda`);
     usuario1.rondasGanadas++;
     } else {
     console.log('Usuario2 gana la ronda');
@@ -45,7 +48,7 @@ for (let lanzamiento = 1; lanzamiento <= cantidadDeLanzamientos; lanzamiento++) 
 }
 console.log('------------------------------------------------');
 if(usuario1.rondasGanadas > usuario2.rondasGanadas){
-    console.log('-------------Usuario1 gana el juego-------------');
+    console.log(`------------- ${usuario1.nombre} gana el juego-------------`);
     console.log('------------------------------------------------');
 }else{console.log('-------------Usuario2 gana el juego-------------');
 console.log('------------------------------------------------');}
