@@ -1,3 +1,85 @@
 * {
-  background-color: rgb(51, 180, 19);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+* header {
+  display: flex;
+  height: 25%;
+  width: 100%;
+  padding: 5px;
+  background-color: rgb(28, 199, 28);
+}
+* header .marcadores {
+  display: flex;
+  width: 100%;
+  padding: 5px;
+  align-items: center;
+  justify-content: space-around;
+}
+* header .marcadores .avatar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+* header .marcadores .avatar img {
+  height: 150px;
+  width: 150px;
+  border-radius: 8px;
+}
+* header .marcadores .marcador {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  width: 60px;
+}
+* header .marcadores .marcador h1 {
+  font-weight: 600;
+}
+* header .marcadores .btn-lanzar {
+  display: flex;
+  height: 100px;
+  width: 120px;
+  align-items: center;
+  justify-content: center;
+}
+* header .marcadores .btn-lanzar button {
+  height: 80px;
+  padding: 15px;
+  font-size: large;
+  background-color: rgb(245, 7, 26);
+  border-radius: 10px;
+}
+* main {
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+  width: 100%;
+}
+* main .lanzamientos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 700px;
+  background-color: crimson;
+}
+* main .lanzamientos .puntuacion-usuarios {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  gap: 10px;
+}
+* main .lanzamientos .resultado-ronda {
+  display: flex;
+  margin-top: 50px;
+}
+* main .resultado-final {
+  display: flex;
+  height: 200px;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(28, 199, 28);
 }/*# sourceMappingURL=main.css.map */
