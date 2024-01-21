@@ -45,7 +45,7 @@ usuario1.nombre = Swal.fire({
   .then((result) => {
     if (result.isConfirmed) {
       if (!result.value) {
-        console.log("No confirmado");
+        return "No confirmado";
       } else {
         usuario1.nombre = result.value;
         userName.textContent = usuario1.nombre;
@@ -53,7 +53,7 @@ usuario1.nombre = Swal.fire({
     }
   })
   .catch((error) => {
-    console.error("Error al ejecutar la operación:", error);
+    return "Hubo un error al cargar su nombre";
   });
 
 let userName = document.querySelector(".user");
@@ -71,6 +71,7 @@ let lanza1Cpu = document.querySelector("#lanz1Cpu");
 let lanza2Cpu = document.querySelector("#lanz2Cpu");
 let lanza3Cpu = document.querySelector("#lanz3Cpu");
 let imagen = document.querySelector("#imagenApi");
+let mensajeDeError =document.querySelector("#mensajeDeError")
 
 // Agrega funcionalidad al boton "Lanzar Cubilete"
 btnLanzar.addEventListener("click", function () {
@@ -84,7 +85,7 @@ btnLanzar.addEventListener("click", function () {
 
     if (usuario1.resultados.reduce((a, b) => a + b, 0) ===
       usuario2.resultados.reduce((a, b) => a + b, 0)) {
-      ganadorRonda.textContent = `Empate, deben volver a Lanzar`;
+      ganadorRonda.textContent = `Empate, deben volver a lanzar`;
     } else {
       const ganador =
         usuario1.resultados.reduce((a, b) => a + b, 0) >
@@ -123,8 +124,9 @@ btnLanzar.addEventListener("click", function () {
         imagen.src = message;
       })
       .catch((error) => {
-        console.error(error);
-      });
+        mensajeDeError.innerText = "Hubo un error al cargar la imagen.";
+  });
+  
   }
   // Condionales para obtener el ganador por mayoria de rondas ganadas
   if (
