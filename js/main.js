@@ -96,7 +96,7 @@ btnLanzar.addEventListener("click", function () {
       marcadorUser.textContent = usuario1.rondasGanadas;
       marcadorCpu.textContent = usuario2.rondasGanadas;
     }
-    //añade todos los resultados de cada usuario en historial y lo almacena en localStorage en formato JSON
+    //Añade todos los resultados de cada usuario en historial y lo almacena en localStorage en formato JSON
     usuario1.historial.push(usuario1.resultados);
     usuario2.historial.push(usuario2.resultados);
     localStorage.setItem("Usuario", JSON.stringify(usuario1));
@@ -106,7 +106,7 @@ btnLanzar.addEventListener("click", function () {
   else {
     location.reload();
   }
-  // Carga los valores obtenidos por Lanzamientos y carga una imagen randon consumiendo una Api al termionar el juego
+  // Al termionar el juego carga los valores obtenidos por Lanzamientos y muestra una imagen randon consumiendo una Api 
   if (cantidadDeLanzamientos === 3) {
     lanza1User.textContent = usuario1.historial[0];
     lanza2User.textContent = usuario1.historial[1];
@@ -121,11 +121,9 @@ btnLanzar.addEventListener("click", function () {
       .then((json) => {
         const message = json.message;
         imagen.src = message;
-
-        // Aquí puedes realizar acciones adicionales con la URL de la imagen
       })
       .catch((error) => {
-        console.error("Error al obtener la imagen del perro:", error);
+        console.error(error);
       });
   }
   // Condionales para obtener el ganador por mayoria de rondas ganadas
