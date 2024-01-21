@@ -82,8 +82,9 @@ btnLanzar.addEventListener("click", function () {
     puntuacionUser.textContent = `${usuario1.nombre} lanza los dados y obtiene...${usuario1.resultados}`;
     puntuacionCpu.textContent = `${usuario2.nombre} lanza los dados y obtiene...${usuario2.resultados}`;
 
-    if (usuario1.resultados === usuario2.resultados) {
-      console.log("Empate");
+    if (usuario1.resultados.reduce((a, b) => a + b, 0) ===
+      usuario2.resultados.reduce((a, b) => a + b, 0)) {
+      ganadorRonda.textContent = `Empate, deben volver a Lanzar`;
     } else {
       const ganador =
         usuario1.resultados.reduce((a, b) => a + b, 0) >
